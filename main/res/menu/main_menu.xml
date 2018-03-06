@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+    <menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+
+        <group
+
+            android:id="@+id/groupColors"
+
+            android:menuCategory="container">
+
+
+
+            <item
+
+                android:id="@+id/menuItemPizza"
+
+
+
+                android:title="@string/pizza"/>
+
+
+
+            <item
+
+                android:id="@+id/menuItemChips"
+
+                android:title="@string/chips" />
+
+
+
+            <item
+
+                android:id="@+id/menuItemPersonalPizza"
+
+                android:title="@string/personalPizza" />
+
+
+
+        </group>
+
+
+
+    </menu>
