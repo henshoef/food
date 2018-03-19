@@ -15,6 +15,7 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:gravity="center_horizontal"
         android:orientation="vertical">
 
         <TextView
@@ -22,8 +23,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="Choose chips shape:"
-            android:textColor="@color/black"
-            />
+            android:textColor="@color/black" />
 
         <RadioGroup
             android:id="@+id/chipsShape"
@@ -75,21 +75,21 @@
 
         <Button
             android:id="@+id/button"
-            android:layout_width="match_parent"
+            android:layout_width="200dp"
             android:layout_height="wrap_content"
 
+            android:background="@drawable/buttons"
             android:onClick="onClickBuy"
-            android:text="Buy"
-            android:background="@drawable/buttons"/>
+            android:text="Buy" />
 
         <Button
             android:id="@+id/button2"
-            android:layout_width="match_parent"
+            android:layout_width="200dp"
             android:layout_height="wrap_content"
 
+            android:background="@drawable/buttons"
             android:onClick="onClickCancel"
-            android:text="Cancel"
-            android:background="@drawable/buttons"/>
+            android:text="Cancel" />
 
     </LinearLayout>
     >

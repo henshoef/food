@@ -13,6 +13,8 @@ import android.widget.ToggleButton;
 import java.util.ArrayList;
 
 public class ChipsActivity extends AppCompatActivity {
+    final int cookTime=10;
+    int calories=330;
 int chipsPrice =0;
 ChipShape shape;
 ChipsKind kind;
@@ -37,23 +39,29 @@ ChipsKind kind;
         if(sticks.isChecked()){
            shape=ChipShape.Sticks;
             chipsPrice += 9;
+            calories+=20;
         }else{
             shape=ChipShape.round;
             chipsPrice += 11;
+
+             calories+=100;
         }
         if(potato.isChecked()){
             kind=ChipsKind.Potato;
             chipsPrice += 5;
+            calories+=50;
         }else{
             kind=ChipsKind.SweeetPotato;
             chipsPrice+=7;
+            calories+=35;
         }
 
-        Food chips=new Chips(chipsPrice,10,500,shape,kind);
+        Food chips=new Chips(chipsPrice,cookTime,calories,shape,kind);
         Intent intent=new Intent(this,CheckOutActivity.class);
         intent.putExtra("Food",chips);
         startActivity(intent);
         chipsPrice=0;
+        calories=330;
 
 
 

@@ -18,6 +18,7 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
+            android:gravity="center_horizontal"
             android:orientation="vertical">
 
             <LinearLayout
@@ -31,7 +32,7 @@
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
                     android:text="Number of cuts"
-                    android:textColor="@color/black"/>
+                    android:textColor="@color/black" />
 
                 <EditText
                     android:id="@+id/numberOfCuts"
@@ -50,7 +51,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="Choose Toppings:"
-                android:textColor="@color/black"/>
+                android:textColor="@color/black" />
 
             <CheckBox
                 android:id="@+id/Peperonni"
@@ -99,35 +100,38 @@
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
                     android:text="Choose Shape"
-                    android:textColor="@color/black"/>
+                    android:textColor="@color/black" />
 
                 <ToggleButton
                     android:id="@+id/shape"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
                     android:layout_weight="1"
+                    android:background="@drawable/buttons"
                     android:text="ToggleButton"
                     android:textOff="Round"
-                    android:textOn="Square"
-                    android:background="@drawable/buttons"/>
+                    android:textOn="Square" />
 
             </LinearLayout>
 
             <Button
                 android:id="@+id/button"
-                android:layout_width="match_parent"
+                android:layout_width="200dp"
                 android:layout_height="wrap_content"
+                android:background="@drawable/buttons"
                 android:onClick="onClickBuy"
                 android:text="Buy"
-                android:background="@drawable/buttons"/>
+
+
+                />
 
             <Button
                 android:id="@+id/button2"
-                android:layout_width="match_parent"
+                android:layout_width="200dp"
                 android:layout_height="wrap_content"
+                android:background="@drawable/buttons"
                 android:onClick="onClickCancel"
-                android:text="Cancel"
-                android:background="@drawable/buttons"/>
+                android:text="Cancel" />
 
         </LinearLayout>
 

@@ -13,8 +13,11 @@ import android.widget.ToggleButton;
 import java.util.ArrayList;
 
 public class PizzaActivity extends AppCompatActivity {
+    final int cookTime=20;
+    int calories=500;
     int pizzaPrice=40;
     PizzaShape shape;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -23,6 +26,7 @@ public class PizzaActivity extends AppCompatActivity {
     }
 public void onClickBuy(View v){
 
+    int slices=8;
     ArrayList<Toppings> toppings = new ArrayList<Toppings>();
     ToggleButton toggleButton=(ToggleButton)findViewById(R.id.shape);
     EditText editText = (EditText)findViewById(R.id.numberOfCuts);
@@ -38,42 +42,50 @@ public void onClickBuy(View v){
     Toppings.Mushrooms.equals(4);
     Toppings.Corn.equals(3);
     Toppings.ExtraCheese.equals(5);
-    int slices=Integer.parseInt(editText.getText().toString());
-
+    try {
+        slices = Integer.parseInt(editText.getText().toString());
+    }catch (Exception E){}
     if(peperonni.isChecked()){
         toppings.add(Toppings.Peperonni);
         pizzaPrice=pizzaPrice+5;
+        calories+=90;
     }
     if(tuna.isChecked()){
         toppings.add(Toppings.Tuna);
         pizzaPrice=pizzaPrice+5;
+        calories+=87;
     }
     if(extraCheese.isChecked()){
         toppings.add(Toppings.ExtraCheese);
         pizzaPrice=pizzaPrice+5;
+        calories+=82;
     }
     if(olives.isChecked()){
         toppings.add(Toppings.Olives);
         pizzaPrice=pizzaPrice+3;
+        calories+=55;
     }
     if(mushrooms.isChecked()){
         toppings.add(Toppings.Mushrooms);
         pizzaPrice=pizzaPrice+4;
+        calories+=31;
     }
     if(corn.isChecked()){
         toppings.add(Toppings.Corn);
         pizzaPrice=pizzaPrice+3;
+        calories+=35;
     }
    if(toggleButton.isChecked()){
         shape=PizzaShape.Square;
     }else {
         shape = PizzaShape.Round;
     }
-    Food pizza=new Pizza(pizzaPrice,20,700,slices,toppings,shape);
+    Food pizza=new Pizza(pizzaPrice,cookTime,calories,slices,toppings,shape);
    Intent intent=new Intent(this,CheckOutActivity.class);
    intent.putExtra("Food",pizza);
     startActivity(intent);
     pizzaPrice=40;
+    calories=500;
 
 
 

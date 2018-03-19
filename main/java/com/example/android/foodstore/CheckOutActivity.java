@@ -9,19 +9,29 @@ import android.widget.TextView;
 import java.io.Serializable;
 
 public class CheckOutActivity extends AppCompatActivity {
-    private TextView txt;
+    private TextView price;
+    private TextView calories;
+    private TextView time;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_check_out);
         Intent intent=getIntent();
-        txt=findViewById(R.id.textView2);
+        price =findViewById(R.id.textView2);
+        calories =findViewById(R.id.calories);
+        time =findViewById(R.id.cookTime);
+
         Serializable food=intent.getSerializableExtra("Food");
         if( food instanceof Pizza ){
-            txt.setText(((Pizza)food).getPrice()+"₪");
+            price.setText(((Pizza)food).getPrice()+"₪");
+            calories.setText(((Pizza)food).getCalories()+"");
+            time.setText(((Pizza)food).getCookTime()+" minutes");
         }
         if( food instanceof Chips ){
-            txt.setText(((Chips)food).getPrice()+"₪");
+            price.setText(((Chips)food).getPrice()+"₪");
+            calories.setText(((Chips)food).getCalories()+"");
+            time.setText(((Chips)food).getCookTime()+" minutes");
         }
     }
     public void onClickOrder(View v){
